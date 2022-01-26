@@ -1,5 +1,5 @@
 
-package GeekBrains_lvl_1_lesson_1;
+package lesson_1;
 
 /**
  * Created by rharren-
