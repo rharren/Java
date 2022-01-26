@@ -26,33 +26,35 @@ public class Lesson_1 {
         System.out.println(calc(1, 2, 6, 3));
 
 //4. Написать метод, принимающий на вход два числа, и проверяющий что их сумма лежит в пределах от 10 до 20(включительно), если да – вернуть true, в противном случае – false;
-        System.out.println(in_ten_twenty_range(8, 9));
+        System.out.println(inTenTwentyRange(8, 9));
 //5. Написать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль положительное ли число передали, или отрицательное; Замечание: ноль считаем положительным числом.
-        positive_or_negative_num(-2);
+        positiveOrNegativeNum(-2);
 
 //6. Написать метод, которому в качестве параметра передается целое число, метод должен вернуть true, если число отрицательное;
-        System.out.println(check_if_negative(-5));
+        System.out.println(checkIfNegative(-5));
 
 //7. Написать метод, которому в качестве параметра передается строка, обозначающая имя, метод должен вывести в консоль сообщение «Привет, указанное_имя!»;
-        string_welcome("Лаваш");
+        stringWelcome("Лаваш");
 
 // 8. * Написать метод, который определяет является ли год високосным, и выводит сообщение в консоль. Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
-        check_year(2022);
+        checkYear(2022);
 
     }
 
     /*3. Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат,
         где a, b, c, d – входные параметры этого метода;
         */
-    private static double calc(double a, double b,  /** Вопрос: Тима, везде надо public у метода писать?*/
-                               double c, double d) {
-        double tmp = a * (b + (c / d)); // просто с переменной попробывал
-        return tmp;
+    private static double calc(
+            double a,
+            double b,
+            double c,
+            double d) {
+        return a * (b + (c / d));
     }
 
-    //4. Написать метод, принимающий на вход два числа, и проверяющий что их сумма лежит
+    //4. Написать метод, принимающий на вход два числа, и проверяющий, что их сумма лежит
 // в пределах от 10 до 20(включительно), если да – вернуть true, в противном случае – false;
-    private static boolean in_ten_twenty_range(double a, double b) {
+    private static boolean inTenTwentyRange(double a, double b) {
         if (a + b >= 10 && a + b <= 20) {
             return true;
         } else {
@@ -63,8 +65,8 @@ public class Lesson_1 {
     //5. Написать метод, которому в качестве параметра передается целое число,
 // метод должен напечатать в консоль положительное ли число передали, или отрицательное;
 // Замечание: ноль считаем положительным числом.
-    public static void positive_or_negative_num(int a) {
-        if (a == 0 || a > 0) {
+    public static void positiveOrNegativeNum(int a) {
+        if (a >= 0) {
             System.out.println("Передали положительное число");
         } else {
             System.out.println("Передали отрицательное число");
@@ -73,13 +75,13 @@ public class Lesson_1 {
 
     //6. Написать метод, которому в качестве параметра передается целое число,
 // метод должен вернуть true, если число отрицательное;
-    public static boolean check_if_negative(int a) {
+    public static boolean checkIfNegative(int a) {
         return (a < 0);
     }
 
     //7. Написать метод, которому в качестве параметра передается строка,
 // обозначающая имя, метод должен вывести в консоль сообщение «Привет, указанное_имя!»;
-    public static void string_welcome(String a) {
+    public static void stringWelcome(String a) {
         System.out.println("Привет, " + a + "!");
         System.out.println("Почти Джедай!!!");
     }
@@ -87,7 +89,7 @@ public class Lesson_1 {
     // 8. * Написать метод, который определяет является ли год високосным,
 // и выводит сообщение в консоль. Каждый 4-й год является високосным,
 // кроме каждого 100-го, при этом каждый 400-й – високосный.
-    public static void check_year(int year) {
+    public static void checkYear(int year) {
         if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)) {
             System.out.println(year + " - не високосный.");
         } else {
