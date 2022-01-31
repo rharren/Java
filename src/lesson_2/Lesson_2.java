@@ -13,7 +13,6 @@ public class Lesson_2 {
         // testing
         System.out.println(Arrays.toString(ex_0())); // return link to array in memory
         // that has to be converted to String to show as array
-        // Tima, is that right?
 
         System.out.println(ex_0_1());  // return String not array
         //1. Задать целочисленный массив, состоящий из элементов 0 и 1.
@@ -71,13 +70,10 @@ public class Lesson_2 {
     static int[] ex_1() {
         int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0 };
         for (int i = 0; i < arr.length; i++) {
-            //System.out.println(i + "-" + arr[i]); // for test
             if (arr[i] == 0){
                 arr[i] = 1;
-                //System.out.println("new " + arr[i]);  // for test
             } else if ( arr[i] == 1){
                 arr[i] = 0;
-                //System.out.println("new " + arr[i]); // for test
             } else{
                 System.out.println("index " + i + "- has number not in 1 or 0! Check array!"); // for possible bug
             }
@@ -117,7 +113,7 @@ public class Lesson_2 {
     //Вспомогательный блок вывода
     public static void printArr(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {  // Тима, строки в массиве могут быть разной длинны?
+            for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j]);
             }
             System.out.println();
@@ -130,7 +126,7 @@ public class Lesson_2 {
             for (int j = 0; j < arr[i].length; j++){
                 if (i == j){
                     arr[i][j] = 1;
-                } else if ( i + j == arr.length - 1 ) { // так можно потому что это квадратный массив
+                } else if ( i + j == arr.length - 1 ) { // по условию это квадратный массив
                     arr[i][j] = 1;
                 }
 
@@ -144,8 +140,8 @@ public class Lesson_2 {
     //5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
     static String ex_5(){
         int [] arr = {1,3,-5,6,0,4,2,4,61};
-        int min = 127;
-        int max = -128;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < arr.length; i++){
             if (min > arr[i]){
@@ -225,5 +221,3 @@ public class Lesson_2 {
         return arr;
     }
 }
-
-
